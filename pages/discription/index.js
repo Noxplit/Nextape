@@ -62,7 +62,7 @@ const Discription = () => {
             ))}
           </p>
           <p>{movieItem?.description_full}</p>
-          <div className='flex gap-10'>
+          <div className='flex gap-10 flex-wrap'>
           <a
             className='dark:bg-white dark:text-black bg-purple-400 text-white rounded-lg p-4 w-[200px] text-center '
             href={movieItem?.url}>
