@@ -30,7 +30,7 @@ const Header = () => {
 			</ul>
 
 			{/* Иконки */}
-			<ul className='flex justify-center items-center gap-5 md:gap-10'>
+			<ul className='flex justify-around items-center gap-10 '>
 				<li>
 					<AiOutlineSearch size={25} />
 				</li>
@@ -53,8 +53,8 @@ const Header = () => {
 					/>
 				</li>
 			</ul>
+      </div>
 		</div>
-    </div>
 	)
 }
 
