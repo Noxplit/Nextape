@@ -70,7 +70,7 @@ const Discription = () => {
 								<div key={id}>{item}</div>
 							))}
 						</p>
-						<div className='flex gap-5 justify-center items-center flex-wrpa'>
+						<div className='flex gap-5 justify-center items-center flex-wrap'>
 							<div className={styleRating.rating}>
 								<Image src='/imdb_logo.svg' width={40} height={25} />
 								<div className='text-2xl font-bold'>{movieItem?.rating}</div>

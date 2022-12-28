@@ -62,7 +62,7 @@ const Main = () => {
 					<Banner />
 					<div className='flex flex-wrap justify-around items-center gap-5 dark:text-white text-black text-center'>
 						{movies?.data?.movies?.map(item => (
-							<Link href='/discription' key={item.id}>
+							<div key={item.id}>
 								<div
 									className='relative flex items-center justify-center h-auto w-full shadow-lg rounded-xl py-8 p-4 group hover:bg-black/70  ease-in duration-500 cursor-pointer'
 									onClick={() => handleId(item.id)}>
@@ -94,10 +94,11 @@ const Main = () => {
 													<div className='text-2xl font-bold text-white'>{item?.language}</div>
 												</div>
 											</div>
+                      <Link href='/discription'><button className='rounded-xl bg-purple-400 text-white px-10 py-2 font-bold' >More info</button></Link>
 										</div>
 									</div>
 								</div>
-							</Link>
+							</div>
 						))}
 					</div>
 					<div className='dark:text-white text-black flex justify-center items-center gap-10 pb-10 pt-5 '>
