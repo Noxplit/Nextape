@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AiOutlineSearch, AiOutlineBell } from 'react-icons/ai'
 import { BiMenuAltLeft } from 'react-icons/bi'
 import { RxAvatar } from 'react-icons/rx'
@@ -8,8 +8,14 @@ import { useSelector, useDispatch } from 'react-redux'
 import Switch from 'react-switch'
 import { getId } from '../../redux/slice/movieSlice'
 import Link from 'next/link'
+import Input from './Input'
+
+const styleIcons = {
+  icons: 'cursor-pointer hover:scale-105 ease-in duration-300'
+}
 
 const Header = () => {
+  const [isOpenInput, setOpenInput] = useState(false)
 	const dispatch = useDispatch()
 	const { mode } = useSelector(state => state.mode)
 	return (
@@ -30,18 +36,18 @@ const Header = () => {
 			</ul>
 
 			{/* Иконки */}
-			<ul className='flex justify-around items-center gap-10 '>
+			<ul className='flex justify-around items-center gap-10 px-2 '>
 				<li>
-					<AiOutlineSearch size={25} />
+					<AiOutlineSearch onClick={() => setOpenInput(!isOpenInput)} size={25} className={styleIcons.icons} />
 				</li>
 				<li>
-					<BiMenuAltLeft size={25} />
+					<BiMenuAltLeft size={25} className={styleIcons.icons} />
 				</li>
 				<li>
-					<AiOutlineBell size={25} />
+					<AiOutlineBell size={25} className={styleIcons.icons} />
 				</li>
 				<li>
-					<RxAvatar size={25} />
+					<RxAvatar size={25} className={styleIcons.icons} />
 				</li>
 				<li>
 					<Switch
@@ -54,6 +60,7 @@ const Header = () => {
 				</li>
 			</ul>
       </div>
+      {isOpenInput && <Input/> }
 		</div>
 	)
 }

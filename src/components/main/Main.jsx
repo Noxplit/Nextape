@@ -15,6 +15,7 @@ const styleRating = {
 const Main = () => {
 	const dispatch = useDispatch()
 	const { movies } = useSelector(state => state.movie)
+	const { search } = useSelector(state => state.movie)
 	// const { id } = useSelector(state => state.movie)
 
 	const [count, setCount] = useState(1)
@@ -24,7 +25,7 @@ const Main = () => {
 		isLoading(true)
 		if (count > 0) {
 			try {
-				const res = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=21&page=${count}`)
+				const res = await axios.get(`https://yts.mx/api/v2/list_movies.json?limit=21&page=${count}&query_term=${search}`)
 				dispatch(getAllMovie(res.data))
 				isLoading(false)
 			} catch (error) {
@@ -36,11 +37,14 @@ const Main = () => {
 
 	useEffect(() => {
 		getMovies(count)
-	}, [count])
+	}, [count, search])
 
 	const handleId = id => {
 		dispatch(getId(id))
 	}
+
+  
+
 
 	return (
 		<>

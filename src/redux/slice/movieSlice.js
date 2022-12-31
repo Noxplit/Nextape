@@ -4,7 +4,8 @@ const initialState = {
   movies: [],
   movie: [],
   banner: [],
-  id: null
+  id: null,
+  search: 'all'
 }
 
 export const movieSlice = createSlice({
@@ -23,12 +24,15 @@ export const movieSlice = createSlice({
     getBanner: (state, actions) => {
       state.banner = actions.payload
     },
+    setSearch: (state, actions) => {
+      state.search = actions.payload
+    },
     
    
   },
 })
 
 
-export const { getAllMovie, getOneMovie, getId, getBanner } = movieSlice.actions
+export const { getAllMovie, getOneMovie, getId, getBanner, setSearch } = movieSlice.actions
 
 export default movieSlice.reducer
