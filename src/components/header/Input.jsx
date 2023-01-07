@@ -7,6 +7,7 @@ const Input = () => {
   const [searchButton, setSearchButton] = useState('')
   const handleSearchButton = () => {
     dispatch(setSearch(searchButton))
+
   }
   return (
     <div className='flex justify-center items-center gap-4 flex-wrap'>

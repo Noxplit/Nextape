@@ -8,7 +8,7 @@ const Layout = ({children}) => {
     <div className={mode ? 'dark' : ''}>
       <Header/>
       {children}
-      {/* <Footer/> */}
+      <Footer/>
     </div>
   )
 }
